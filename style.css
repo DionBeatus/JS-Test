@@ -1,0 +1,217 @@
+:root {
+    --dark-bg: #121212;
+    --dark-text: #eee;
+    --light-bg: #f0f0f0;
+    --light-text: #222;
+    --primary: #4a90e2;
+    --btn-bg: #3a6ed8;
+    --btn-hover-bg: #2851a3;
+    --btn-active-bg: #1e3a78;
+    --border-radius: 6px;
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-family);
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+    transition: background-color 0.3s, color 0.3s;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+body.light-mode {
+    background-color: var(--light-bg);
+    color: var(--light-text);
+}
+
+header {
+    background-color: var(--primary);
+    padding: 1rem 2rem;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    font-weight: 700;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.6rem;
+}
+
+.toggle-light {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.toggle-light button {
+    background-color: var(--btn-bg);
+    border: none;
+    color: white;
+    padding: 0.4rem 1rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.toggle-light button:hover {
+    background-color: var(--btn-hover-bg);
+}
+
+main {
+    flex: 1;
+    display: flex;
+    padding: 1rem 2rem;
+    gap: 1rem;
+}
+
+nav#materi-nav {
+    flex-basis: 250px;
+    background: #222;
+    border-radius: var(--border-radius);
+    overflow-y: auto;
+    max-height: 80vh;
+    padding: 1rem 0.5rem;
+    scrollbar-width: thin;
+    scrollbar-color: var(--btn-bg) transparent;
+}
+
+body.light-mode nav#materi-nav {
+    background: #ddd;
+}
+
+nav#materi-nav button {
+    display: block;
+    width: 100%;
+    background: transparent;
+    border: none;
+    padding: 0.6rem 1rem;
+    color: inherit;
+    text-align: left;
+    cursor: pointer;
+    font-weight: 600;
+    border-left: 4px solid transparent;
+    transition: background-color 0.25s, border-color 0.25s;
+    border-radius: 0 6px 6px 0;
+    margin-bottom: 0.2rem;
+}
+
+nav#materi-nav button:hover {
+    background-color: var(--btn-hover-bg);
+    color: white;
+}
+
+nav#materi-nav button.active {
+    background-color: var(--btn-active-bg);
+    color: white;
+    border-left-color: var(--btn-bg);
+}
+
+section#materi-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#materi-content h3 {
+    margin: 0;
+    font-size: 1.8rem;
+    border-bottom: 3px solid var(--primary);
+    padding-bottom: 0.25rem;
+}
+
+#materi-description {
+    font-size: 1.1rem;
+    min-height: 50px;
+    margin-bottom: 1rem;
+}
+
+#code-editor {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    border: 1px solid #444;
+    resize: vertical;
+    min-height: 150px;
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.light-mode #code-editor {
+    background-color: #fefefe;
+    color: #111;
+    border-color: #ccc;
+}
+
+#run-code {
+    align-self: flex-start;
+    margin-top: 0.5rem;
+    background-color: var(--btn-bg);
+    border: none;
+    color: white;
+    font-weight: 700;
+    padding: 0.6rem 1.5rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#run-code:hover {
+    background-color: var(--btn-hover-bg);
+}
+
+#code-output {
+    white-space: pre-wrap;
+    font-family: monospace;
+    font-size: 1rem;
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    background-color: #222;
+    color: #eee;
+    min-height: 100px;
+    border: 1px solid #444;
+    transition: background-color 0.3s, color 0.3s;
+    overflow-x: auto;
+}
+
+body.light-mode #code-output {
+    background-color: #f4f4f4;
+    color: #222;
+    border-color: #ccc;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    background-color: var(--primary);
+    color: white;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    nav#materi-nav {
+        max-height: none;
+        flex-basis: auto;
+        margin-bottom: 1rem;
+    }
+}

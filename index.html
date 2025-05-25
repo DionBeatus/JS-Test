@@ -1,19 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
+
 <head>
-<script>
-function myFunction() {
-  document.getElementById("demo").innerHTML = "Paragraph changed.";
-}
-</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dion Beatus - Materi JavaScript Interaktif</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
-<h2>Demo JavaScript in Head</h2>
+  <header>
+    <h1>Dion Beatus - JavaScript</h1>
+    <div class="toggle-light">
+      <button id="btn-light-on">Turn On Light</button>
+      <button id="btn-light-off">Turn Off Light</button>
+      <img id="myImage" src="aset/bulb_off.jpg" alt="Lampu" width="40" />
+    </div>
+  </header>
 
-<p id="demo">A Paragraph.</p>
+  <main>
+    <nav id="materi-nav" aria-label="Daftar Materi JavaScript">
+      <!-- Tombol materi akan dibuat otomatis lewat JS -->
+    </nav>
 
-<button type="button" onclick="myFunction()">Try it</button>
+    <section id="materi-content" aria-live="polite">
+      <h3>Judul Materi</h3>
+      <p id="materi-description">Deskripsi materi akan muncul di sini.</p>
+      <textarea id="code-editor" spellcheck="false" aria-label="Editor kode JavaScript"></textarea>
+      <button id="run-code">Jalankan Kode</button>
+      <pre id="code-output" aria-label="Output kode"></pre>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Dion Beatus 
+  </footer>
+
+  <script src="script.js"></script>
 
 </body>
-</html> 
+
+</html>
