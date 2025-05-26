@@ -1,4 +1,3 @@
-// Data materi lengkap sesuai request, deskripsi dan contoh singkat tiap topik
 const materiJS = {
     "JS W3School": {
         deskripsi: "Sumber belajar utama JavaScript dari W3Schools.",
@@ -15,10 +14,6 @@ const materiJS = {
     "JS Where To": {
         deskripsi: "JavaScript bisa diletakkan di head, body, atau file eksternal.",
         contoh: `document.body.style.backgroundColor = "lightblue";`
-    },
-    "JS Output": {
-        deskripsi: "Output JavaScript dapat ditampilkan di console, alert, atau HTML.",
-        contoh: `document.getElementById("demo").innerHTML = "Output ke HTML";`
     },
     "JS Statement": {
         deskripsi: "Statement adalah instruksi JavaScript.",
